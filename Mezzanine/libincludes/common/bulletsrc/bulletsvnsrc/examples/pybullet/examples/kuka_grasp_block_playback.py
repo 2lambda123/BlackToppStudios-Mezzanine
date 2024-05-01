@@ -8,8 +8,8 @@ def readLogFile(filename, verbose = True):
   print('Opened'),
   print(filename)
 
-  keys = f.readline().decode('utf8').rstrip('\n').split(',')
-  fmt = f.readline().decode('utf8').rstrip('\n')
+  keys = f.readline(5_000_000).decode('utf8').rstrip('\n').split(',')
+  fmt = f.readline(5_000_000).decode('utf8').rstrip('\n')
   
   # The byte number of one record
   sz = struct.calcsize(fmt)
